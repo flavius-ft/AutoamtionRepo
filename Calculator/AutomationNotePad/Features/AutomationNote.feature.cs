@@ -28,7 +28,7 @@ namespace AutomationNotePad.Features
         
         private static string[] featureTags = ((string[])(null));
         
-#line 1 "NotePad.feature"
+#line 1 "AutomationNote.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
