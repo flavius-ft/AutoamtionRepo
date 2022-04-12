@@ -13,7 +13,7 @@ namespace AutomationNotePad
         private Application application;
         private Window mainwindow;
 
-        static void Main(string[] args)
+        static void Main()
         {
             AutomationNoteP pad = new();
             pad.LaunchNotepad();

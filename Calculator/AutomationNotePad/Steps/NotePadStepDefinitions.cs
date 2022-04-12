@@ -6,7 +6,7 @@ namespace AutomationNotePad.Features
     [Binding]
     public class NotePadStepDefinitions
     {
-        AutomationNoteP pad = new();     // nu pot instantia clasa 
+       // AutomationNoteP pad = new AutomationNoteP();     // nu pot instantia clasa 
 
         [Given(@"open notepad")]
         [Obsolete]
