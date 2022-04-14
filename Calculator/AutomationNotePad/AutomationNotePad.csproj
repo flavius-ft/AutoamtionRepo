@@ -23,4 +23,8 @@
     <Folder Include="Hooks\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Calculator\Automation.csproj" />
+  </ItemGroup>
+
 </Project>

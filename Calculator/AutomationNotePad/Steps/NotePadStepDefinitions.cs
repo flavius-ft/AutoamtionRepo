@@ -6,13 +6,13 @@ namespace AutomationNotePad.Features
     [Binding]
     public class NotePadStepDefinitions
     {
-       // AutomationNoteP pad = new AutomationNoteP();     // nu pot instantia clasa 
+        AutomationNoteP pad = new();     // nu pot instantia clasa 
 
         [Given(@"open notepad")]
         [Obsolete]
         public void GivenOpenNotepad()
         {
-
+            pad.LaunchNotepad();
         }
 
 
@@ -20,7 +20,7 @@ namespace AutomationNotePad.Features
         [Obsolete]
         public void WhenTheTextIsEnterd(string text)
         {
-            ScenarioContext.Current.Pending();
+            pad.EnterText(text);
         }
         
         [Then(@"press X and don't save it")]
