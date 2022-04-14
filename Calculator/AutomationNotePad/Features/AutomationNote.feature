@@ -7,5 +7,5 @@ Link to a feature: [Calculator](AutomationNotePad/Features/Calculator.feature)
 
 Scenario: Enter text in note pad, clik X and don's save
 	Given open notepad
-	When the text "hello" is enterd
+	When the text "Hello" is enterd
 	Then press X and don't save it

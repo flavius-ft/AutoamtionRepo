@@ -41,13 +41,14 @@ namespace AutomationNotePad
         public void SelectFile()
         {
             ConditionFactory cf = new(new UIA3PropertyLibrary());
-            mainwindow.FindFirstDescendant(cf.ByName("File")).AsMenuItem().Click();
+            var menu = mainwindow.FindFirstDescendant(cf.Menu()).AsMenu();
+            menu.Items[0].Invoke().FindFirstDescendant(cf.ByName("Exit")).Click();
         }
 
         public void DontSave()
         {
             ConditionFactory cf = new(new UIA3PropertyLibrary());
-            mainwindow.FindFirstDescendant(cf.ByName("Don't Save")).AsButton().Click();
+            mainwindow.FindFirstDescendant(cf.ByName("Don't save")).AsButton().Click();
         }
     }
 }
