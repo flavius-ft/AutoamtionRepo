@@ -18,8 +18,7 @@ namespace AutomationNotePad
             AutomationNoteP pad = new();
             pad.LaunchNotepad();
             pad.EnterText(Convert.ToString(Console.ReadLine()));
-            pad.SelectFile();
-           // pad.DontSave();
+            pad.CloseTheApp();
         }
 
         public void LaunchNotepad()
@@ -38,17 +37,13 @@ namespace AutomationNotePad
             mainwindow.FindFirstDescendant(cf.ByName("RichEdit Control"))?.AsTextBox().Enter(text);
         }
 
-        public void SelectFile()
+        public void CloseTheApp()
         {
             ConditionFactory cf = new(new UIA3PropertyLibrary());
-            var menu = mainwindow.FindFirstDescendant(cf.Menu()).AsMenu();
-            menu.Items[0].Invoke().FindFirstDescendant(cf.ByName("Exit")).Click();
+            mainwindow.FindFirstDescendant(cf.ByName("Close")).AsButton().Invoke();
+
+            mainwindow.FindFirstDescendant(cf.ByAutomationId("SecondaryButton")).AsButton().Invoke();
         }
 
-        public void DontSave()
-        {
-            ConditionFactory cf = new(new UIA3PropertyLibrary());
-            mainwindow.FindFirstDescendant(cf.ByName("Don't save")).AsButton().Click();
-        }
     }
 }
