@@ -5,6 +5,7 @@ using FlaUI.UIA2;
 using FlaUI.Core.Conditions;
 using FlaUI.Core.AutomationElements;
 using System.Threading;
+using FlaUI.Core.Input;
 
 namespace AutomationNotePad
 {
@@ -17,8 +18,9 @@ namespace AutomationNotePad
         {
             AutomationNoteP pad = new();
             pad.LaunchNotepad();
-            pad.EnterText(Convert.ToString(Console.ReadLine()));
-            pad.CloseTheApp();
+            pad.ChangeTheme();
+           // pad.EnterText(Convert.ToString(Console.ReadLine()));
+            //pad.CloseTheApp();
         }
 
         public void LaunchNotepad()
@@ -43,6 +45,21 @@ namespace AutomationNotePad
             mainwindow.FindFirstDescendant(cf.ByName("Close")).AsButton().Invoke();
 
             mainwindow.FindFirstDescendant(cf.ByAutomationId("SecondaryButton")).AsButton().Invoke();
+        }
+
+        public void ChangeTheme()
+        {
+            ConditionFactory cf = new(new UIA3PropertyLibrary());
+            mainwindow.FindFirstDescendant(cf.ByAutomationId("SettingsButton")).AsButton().Invoke();
+            mainwindow.FindFirstDescendant(cf.ByAutomationId("Expander")).DrawHighlight().Click();
+            mainwindow.FindFirstDescendant(cf.ByAutomationId("DarkButton")).AsRadioButton().Click();
+            
+
+        }
+
+        public void Close()
+        {
+            mainwindow.Close();
         }
 
     }

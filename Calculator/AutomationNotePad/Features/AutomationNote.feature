@@ -9,3 +9,8 @@ Scenario: Enter text in note pad, clik X and don's save
 	Given open notepad
 	When the text "Hello" is enterd
 	Then close tha app
+
+Scenario: Open notepad, go to Edit and change the theme to dark
+    Given open notepad
+	When change the theme to dark
+	Then close the app

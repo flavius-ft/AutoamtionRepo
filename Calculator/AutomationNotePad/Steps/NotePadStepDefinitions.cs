@@ -29,6 +29,21 @@ namespace AutomationNotePad.Features
             pad.CloseTheApp();
         }
 
+        [When(@"change the theme to dark")]
+        public void WhenChangeTheThemeToDark()
+        {
+            pad.ChangeTheme();
+        }
+
+
+        [Then(@"close the app")]
+        public void ThenCloseTheApp()
+        {
+            pad.Close();
+        }
+
+
+
 
     }
 }
