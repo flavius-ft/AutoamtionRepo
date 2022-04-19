@@ -6,8 +6,7 @@ Link to a feature: [Calculator](TotalCommSpecflow.spex/Features/Calculator.featu
 ***Further read***: **[Learn more about how to generate Living Documentation](https://docs.specflow.org/projects/specflow-livingdoc/en/latest/LivingDocGenerator/Generating-Documentation.html)**
 
 @mytag
-Scenario: Add two numbers
-	Given the first number is 50
-	And the second number is 70
-	When the two numbers are added
-	Then the result should be 120
+Scenario: Open Edge and download TotalCommand 
+	Given the URL https://www.ghisler.com/
+	When the download is finnished
+	Then instal the app

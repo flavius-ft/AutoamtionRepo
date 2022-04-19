@@ -24,6 +24,19 @@ namespace TotalCommSpecflow
         public void OpenWeb()
         {
             this.app = Application.Launch(@"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe");
+            this.mainwindow = app.GetMainWindow(new UIA3Automation());
+        }
+
+        public void EnterUrl()
+        {
+            ConditionFactory cf = new(new UIA3PropertyLibrary());
+
+            mainwindow.FindFirstDescendant(cf.ByName("Address and search bar")).DrawHighlight();
+        }
+
+        public string Url(string url)
+        {
+            return Convert.ToString(Console.Read()); 
         }
 
     }

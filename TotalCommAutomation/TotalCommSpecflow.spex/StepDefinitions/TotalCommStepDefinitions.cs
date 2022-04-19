@@ -3,7 +3,7 @@ namespace TotalCommSpecflow.spex.StepDefinitions
     [Binding]
     public sealed class TotalCommStepDefinitions
     {
-        // For additional details on SpecFlow step definitions see https://go.specflow.org/doc-stepdef
+        TotalComm total = new();
 
         [Given("the first number is (.*)")]
         public void GivenTheFirstNumberIs(int number)
@@ -40,5 +40,27 @@ namespace TotalCommSpecflow.spex.StepDefinitions
 
             throw new PendingStepException();
         }
+
+        [Given(@"the URL (.*)")]
+        public void GivenTheURLHttpsWww_Ghisler_Com(string url)
+        {
+            total.OpenWeb();
+            total.EnterUrl();
+        }
+
+        [When(@"the download is finnished")]
+        public void WhenTheDownloadIsFinnished()
+        {
+            throw new PendingStepException();
+        }
+
+        [Then(@"instal the app")]
+        public void ThenInstalTheApp()
+        {
+            throw new PendingStepException();
+        }
+
+
+
     }
 }
