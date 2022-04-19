@@ -7,6 +7,6 @@ Link to a feature: [Calculator](TotalCommSpecflow.spex/Features/Calculator.featu
 
 @mytag
 Scenario: Open Edge and download TotalCommand 
-	Given the URL https://www.ghisler.com/
+	Given the URL https://www.totalcommander.ch/beta/tc1050x64_b1.exe
 	When the download is finnished
 	Then instal the app

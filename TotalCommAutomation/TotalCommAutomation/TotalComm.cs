@@ -14,17 +14,17 @@ namespace TotalCommSpecflow
     {
         private Application app;
         private Window mainwindow;
+        private static readonly HttpClient httpClient = new();
         public static void Main()
         {
             TotalComm total = new();
 
-            total.OpenWeb();
+            total.GetTotalCommander("https://www.totalcommander.ch/beta/tc1050x64_b1.exe");
         }
 
-        public void OpenWeb()
+        public void GetTotalCommander(string url)
         {
-            this.app = Application.Launch(@"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe");
-            this.mainwindow = app.GetMainWindow(new UIA3Automation());
+            httpClient.GetAsync(url);
         }
 
         public void EnterUrl()

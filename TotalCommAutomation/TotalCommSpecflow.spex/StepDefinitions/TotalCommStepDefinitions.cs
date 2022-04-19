@@ -44,8 +44,7 @@ namespace TotalCommSpecflow.spex.StepDefinitions
         [Given(@"the URL (.*)")]
         public void GivenTheURLHttpsWww_Ghisler_Com(string url)
         {
-            total.OpenWeb();
-            total.EnterUrl();
+            total.GetTotalCommander(url);
         }
 
         [When(@"the download is finnished")]

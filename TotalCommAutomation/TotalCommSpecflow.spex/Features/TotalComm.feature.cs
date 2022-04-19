@@ -107,7 +107,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 10
- testRunner.Given("the URL https://www.ghisler.com/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the URL https://www.totalcommander.ch/beta/tc1050x64_b1.exe", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 11
  testRunner.When("the download is finnished", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
