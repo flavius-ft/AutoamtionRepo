@@ -14,7 +14,12 @@ namespace TotalCommSpecflow
     {
         private Application app;
         private Window mainwindow;
-        private static readonly HttpClient httpClient = new();
+        private static readonly HttpClient httpClient;
+
+        static TotalComm()
+        {
+            httpClient = new HttpClient();
+        }
         public static void Main()
         {
             TotalComm total = new();
@@ -22,21 +27,11 @@ namespace TotalCommSpecflow
             total.GetTotalCommander("https://www.totalcommander.ch/beta/tc1050x64_b1.exe");
         }
 
-        public void GetTotalCommander(string url)
-        {
-            httpClient.GetAsync(url);
-        }
 
-        public void EnterUrl()
-        {
-            ConditionFactory cf = new(new UIA3PropertyLibrary());
 
-            mainwindow.FindFirstDescendant(cf.ByName("Address and search bar")).DrawHighlight();
-        }
-
-        public string Url(string url)
+        public Task<HttpResponseMessage> GetTotalCommander(string url)
         {
-            return Convert.ToString(Console.Read()); 
+            return httpClient.GetAsync(url);
         }
 
     }
