@@ -78,14 +78,14 @@ Link to a feature: [Calculator](TotalCommSpecflow.spex/Features/Calculator.featu
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Open Edge and download TotalCommand")]
+        [NUnit.Framework.DescriptionAttribute("Download and install TotalCommand")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        public virtual void OpenEdgeAndDownloadTotalCommand()
+        public virtual void DownloadAndInstallTotalCommand()
         {
             string[] tagsOfScenario = new string[] {
                     "mytag"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open Edge and download TotalCommand", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Download and install TotalCommand", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

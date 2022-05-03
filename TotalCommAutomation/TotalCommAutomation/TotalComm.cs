@@ -5,8 +5,9 @@ using FlaUI.UIA3;
 using FlaUI.UIA2;
 using FlaUI.Core.Conditions;
 using FlaUI.Core.AutomationElements;
-using System.Threading;
+using System.Threading.Tasks;
 using FlaUI.Core.Input;
+using System.Net.Http;
 
 namespace TotalCommSpecflow
 {
@@ -14,24 +15,31 @@ namespace TotalCommSpecflow
     {
         private Application app;
         private Window mainwindow;
-        private static readonly HttpClient httpClient;
+        private static readonly HttpClient client = new();
 
-        static TotalComm()
-        {
-            httpClient = new HttpClient();
-        }
         public static void Main()
         {
-            TotalComm total = new();
-
-            total.GetTotalCommander("https://www.totalcommander.ch/beta/tc1050x64_b1.exe");
+            Task task = new(DownloadPageAsync);
+            task.Start();
+            Console.WriteLine();
+            Console.ReadLine();
         }
 
 
 
-        public Task<HttpResponseMessage> GetTotalCommander(string url)
+        static async void DownloadPageAsync()
         {
-            return httpClient.GetAsync(url);
+            using(client)
+                using(HttpResponseMessage response = await client.GetAsync("https://www.totalcommander.ch/beta/tc1050x64_b1.exe"))
+                using(HttpContent content = response.Content)
+            {
+                string result = await content.ReadAsStringAsync();
+                if (result != null)
+                {
+                    Console.WriteLine(result);
+                }
+            }
+            
         }
 
     }
