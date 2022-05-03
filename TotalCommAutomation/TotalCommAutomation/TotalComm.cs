@@ -18,15 +18,10 @@ namespace TotalCommSpecflow
         private static readonly HttpClient client = new();
 
         //"https://www.totalcommander.ch/beta/tc1050x64_b1.exe"))
-        static void Main()
-        {
-            Download();
-        }
-
-        static async void Download()
+        public static async Task Main()
         {
             using var stream = await client.GetStreamAsync("https://www.totalcommander.ch/beta/tc1050x64_b1.exe");
-            using var fileStream = new FileStream(@"C:\Users\User\source\repos\AutoamtionRepo\TotalCommAutomation", FileMode.CreateNew);
+            using var fileStream = new FileStream("Downloads", FileMode.CreateNew);
             await stream.CopyToAsync(fileStream);
         }
 
