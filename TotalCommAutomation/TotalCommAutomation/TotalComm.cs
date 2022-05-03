@@ -13,36 +13,23 @@ namespace TotalCommSpecflow
 {
     public class TotalComm
     {
-        private Application app;
-        private Window mainwindow;
+       // private Application app;
+       // private Window mainwindow;
         private static readonly HttpClient client = new();
 
-        public static void Main()
+        //"https://www.totalcommander.ch/beta/tc1050x64_b1.exe"))
+        static void Main()
         {
-            Task task = new(DownloadPageAsync);
-            task.Start();
-            Console.WriteLine();
-            Console.ReadLine();
+            Download();
         }
 
-
-
-        static async void DownloadPageAsync()
+        static async void Download()
         {
-            using(client)
-                using(HttpResponseMessage response = await client.GetAsync("https://www.totalcommander.ch/beta/tc1050x64_b1.exe"))
-                using(HttpContent content = response.Content)
-            {
-                string result = await content.ReadAsStringAsync();
-                if (result != null)
-                {
-                    Console.WriteLine(result);
-                }
-            }
-            
+            using var stream = await client.GetStreamAsync("https://www.totalcommander.ch/beta/tc1050x64_b1.exe");
+            using var fileStream = new FileStream(@"C:\Users\User\source\repos\AutoamtionRepo\TotalCommAutomation", FileMode.CreateNew);
+            await stream.CopyToAsync(fileStream);
         }
 
+           
     }
-
-
 }
