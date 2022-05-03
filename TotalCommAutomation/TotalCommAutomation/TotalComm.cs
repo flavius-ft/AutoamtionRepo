@@ -21,7 +21,7 @@ namespace TotalCommSpecflow
         public static async Task Main()
         {
             using var stream = await client.GetStreamAsync("https://www.totalcommander.ch/beta/tc1050x64_b1.exe");
-            using var fileStream = new FileStream("Downloads", FileMode.CreateNew);
+            using var fileStream = new FileStream(@"C:\Users\User\Downloads\TotalCommand", FileMode.CreateNew);
             await stream.CopyToAsync(fileStream);
         }
 
