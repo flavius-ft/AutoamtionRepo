@@ -20,7 +20,7 @@ namespace TotalCommSpecflow.spex.StepDefinitions
         [Then(@"instal the app")]
         public void ThenInstalTheApp()
         {
-            total.InstallTheApp();
+            throw new PendingStepException();
         }
 
 
