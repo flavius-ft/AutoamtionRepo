@@ -28,7 +28,7 @@ namespace TotalCommSpecflow
 
             Process process = new();
             process.StartInfo.FileName = @"C:\Users\User\Downloads\TotalCommand.exe";
-            process.StartInfo.Arguments = "/quiet";
+            process.StartInfo.Arguments = "/AHMGDU";
             process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             process.Start();
             process.WaitForExit();
