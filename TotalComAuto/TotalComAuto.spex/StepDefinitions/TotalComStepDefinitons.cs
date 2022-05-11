@@ -4,7 +4,7 @@ namespace TotalComAuto.spex.StepDefinitions
     public sealed class TotalComStepDefinitons
     {
         // For additional details on SpecFlow step definitions see https://go.specflow.org/doc-stepdef
-
+        
 
         [Given(@"the URL (.*)")]
         public void GivenTheURLHttpsWww_Ghisler_Com(string url)

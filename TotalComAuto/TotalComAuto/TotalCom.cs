@@ -32,6 +32,8 @@ namespace TotalCommSpecflow
             process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             process.Start();
             process.WaitForExit();
+
+            // use Path.GetTempPath(); pentru a download- a intr-un fisier temporar, asa poate functiona pe majoritatea PC-urilor
         }
 
 
