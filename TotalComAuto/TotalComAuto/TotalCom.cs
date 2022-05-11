@@ -6,17 +6,14 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Management;
-using Accessibility;
-using System.Management.Automation;
 using System.Diagnostics;
 
 namespace TotalCommSpecflow
 {
     public class TotalComm
     {
-       // private Application app;
-       // private Window mainwindow;
+        // private Application app;
+        // private Window mainwindow;
         private static readonly HttpClient client = new();
         public static TotalComm total = new();
 
@@ -37,7 +34,7 @@ namespace TotalCommSpecflow
             process.WaitForExit();
         }
 
-       
+
 
 
     }

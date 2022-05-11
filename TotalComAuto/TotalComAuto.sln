@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TotalComAuto", "TotalComAuto\TotalComAuto.csproj", "{91C811F6-5D8D-4589-85A5-CC02034A3417}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TotalComAuto.spex", "TotalComAuto.spex\TotalComAuto.spex.csproj", "{D8982B4A-BC9F-421A-AF1E-41D1E8E47916}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91C811F6-5D8D-4589-85A5-CC02034A3417}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91C811F6-5D8D-4589-85A5-CC02034A3417}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91C811F6-5D8D-4589-85A5-CC02034A3417}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91C811F6-5D8D-4589-85A5-CC02034A3417}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8982B4A-BC9F-421A-AF1E-41D1E8E47916}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8982B4A-BC9F-421A-AF1E-41D1E8E47916}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8982B4A-BC9F-421A-AF1E-41D1E8E47916}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8982B4A-BC9F-421A-AF1E-41D1E8E47916}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ABCD4BA9-6EB7-435A-9A06-6862D7CC3FC3}
+	EndGlobalSection
+EndGlobal
