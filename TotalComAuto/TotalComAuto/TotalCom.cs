@@ -21,19 +21,20 @@ namespace TotalCommSpecflow
         // https://www.ghisler.com/
         public static async Task Main()
         {
+            string tempPath = Path.GetTempPath();
             using var stream = await client.GetStreamAsync(@"https://www.totalcommander.ch/win/tcmd1000x64.exe");
-            using var fileStream = new FileStream(@"C:\Users\User\Downloads\TotalCommand.exe", FileMode.CreateNew);
+            //  using var fileStream = new FileStream(@"C:\Users\User\Downloads\TotalCommand.exe", FileMode.CreateNew);
+            using var fileStream = new FileStream(tempPath + "TotalCommander.exe", FileMode.CreateNew);
             await stream.CopyToAsync(fileStream);
             fileStream.Dispose();
 
             Process process = new();
-            process.StartInfo.FileName = @"C:\Users\User\Downloads\TotalCommand.exe";
+            process.StartInfo.FileName = tempPath + "TotalCommander.exe";
             process.StartInfo.Arguments = "/AHMGDU";
             process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             process.Start();
             process.WaitForExit();
 
-            // use Path.GetTempPath(); pentru a download- a intr-un fisier temporar, asa poate functiona pe majoritatea PC-urilor
         }
 
 
