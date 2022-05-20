@@ -45,14 +45,19 @@ namespace TotalCommSpecflow
             ConditionFactory cf = new(new UIA3PropertyLibrary());
             this.app = Application.Launch(@"C:\Program Files\totalcmd\TOTALCMD64.EXE");
             this.mainwindow = app.GetMainWindow(new UIA3Automation());
-           // @"/Window[1]/Pane/Pane/Pane/Pane"
+            // @"/Window[1]/Pane/Pane/Pane/Pane"
 
-            mainwindow.FindFirstByXPath(@"/Window[1]/Pane/Pane/Pane/Pane").DrawHighlight();
-            mainwindow.FindFirstDescendant(cf.ByName("")).AsButton().Click();
-                
+            //mainwindow.FindAt((FlaUI.Core.Definitions.TreeScope)7,1,cf.ByControlType(FlaUI.Core.Definitions.ControlType.Window)).FindFirstDescendant(cf.ByName("Total Commander")).DrawHighlight();
+            // mainwindow.FindFirstByXPath("/Window[1]").DrawHighlight();
+            mainwindow.FindChildAt(1, cf.ByControlType(FlaUI.Core.Definitions.ControlType.Window)).DrawHighlight();
         }
 
+        public void EditFile()
+        {
 
+
+
+        }
 
     }
 }
