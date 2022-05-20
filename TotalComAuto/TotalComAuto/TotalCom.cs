@@ -7,13 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using FlaUI.Core;
+using FlaUI.UIA3;
+using FlaUI.UIA2;
+using FlaUI.Core.Conditions;
+using FlaUI.Core.AutomationElements;
 
 namespace TotalCommSpecflow
 {
     public class TotalComm
     {
-        // private Application app;
-        // private Window mainwindow;
+         private Application app;
+         private Window mainwindow;
         private static readonly HttpClient client = new();
         public static TotalComm total = new();
 
@@ -33,6 +38,18 @@ namespace TotalCommSpecflow
             process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             process.Start();
             process.WaitForExit();
+        }
+
+        public  void OpenTotalCommander()
+        {
+            ConditionFactory cf = new(new UIA3PropertyLibrary());
+            this.app = Application.Launch(@"C:\Program Files\totalcmd\TOTALCMD64.EXE");
+            this.mainwindow = app.GetMainWindow(new UIA3Automation());
+           // @"/Window[1]/Pane/Pane/Pane/Pane"
+
+            mainwindow.FindFirstByXPath(@"/Window[1]/Pane/Pane/Pane/Pane").DrawHighlight();
+            mainwindow.FindFirstDescendant(cf.ByName("")).AsButton().Click();
+                
         }
 
 
