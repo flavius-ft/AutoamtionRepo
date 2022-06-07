@@ -12,6 +12,9 @@ using FlaUI.UIA3;
 using FlaUI.UIA2;
 using FlaUI.Core.Conditions;
 using FlaUI.Core.AutomationElements;
+using FlaUI.Core.WindowsAPI;
+using FlaUI.Core.Definitions;
+using FlaUI.Core.Input;
 
 namespace TotalCommSpecflow
 {
@@ -43,20 +46,35 @@ namespace TotalCommSpecflow
         public  void OpenTotalCommander()
         {
             ConditionFactory cf = new(new UIA3PropertyLibrary());
+            //ConditionFactory cf = new(new UIA2PropertyLibrary());
             this.app = Application.Launch(@"C:\Program Files\totalcmd\TOTALCMD64.EXE");
             this.mainwindow = app.GetMainWindow(new UIA3Automation());
-            // @"/Window[1]/Pane/Pane/Pane/Pane"
 
-            //mainwindow.FindAt((FlaUI.Core.Definitions.TreeScope)7,1,cf.ByControlType(FlaUI.Core.Definitions.ControlType.Window)).FindFirstDescendant(cf.ByName("Total Commander")).DrawHighlight();
-            // mainwindow.FindFirstByXPath("/Window[1]").DrawHighlight();
-            mainwindow.FindChildAt(1, cf.ByControlType(FlaUI.Core.Definitions.ControlType.Window)).DrawHighlight();
+            var automation = new UIA3Automation();
+                var desk = automation.GetDesktop();
+            var name = desk.FindFirstByXPath("/Window[1]/Pane/Pane/Pane/Pane").Name;
+
+            if (name == "1")
+            {
+                desk.FindFirstByXPath("/Window[1]/Pane/Pane/Pane/Button[3]").AsButton().Invoke();
+            }
+
+            if (name == "2")
+            {
+                desk.FindFirstByXPath("/Window/Pane/Pane/Pane/Button[2]").AsButton().Invoke();
+            }
+
+            if (name == "3")
+            {
+                desk.FindFirstByXPath("/Window/Pane/Pane/Pane/Button[1]").AsButton().Invoke();
+            }
+               
         }
+
+
 
         public void EditFile()
         {
-
-
-
         }
 
     }
